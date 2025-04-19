@@ -8,8 +8,11 @@
     "build": "npm run typecheck && esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --format=cjs --minify --sourcemap",
     "build:browser": "npm run typecheck && esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=browser --format=iife --minify --sourcemap",
     "start": "node dist/bundle.js",
-    "dev": "esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --format=cjs --sourcemap --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,9 @@
   "devDependencies": {
     "@types/node": "^22.14.1",
     "esbuild": "^0.25.2",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
