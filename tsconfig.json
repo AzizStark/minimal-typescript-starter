@@ -1,0 +1,27 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    /* Build Options */
+    "target": "ES2016", // Target environment (e.g., ES2016, ES2020, ESNext). Choose based on where your code will run.
+    "module": "ESNext", // Module system for emitted JS. Use ESNext for modern bundlers like esbuild. Use CommonJS for traditional Node.js without bundling.
+    "outDir": "./dist", // Where compiled JS (by tsc alone) would go. esbuild will override this for the final bundle.
+    "rootDir": "./src", // Specifies the root directory of input files.
+    "sourceMap": true, // Generate sourcemap files for debugging. Crucial!
+    "declaration": true, // Generate corresponding '.d.ts' definition files (optional, useful for libraries).
+    "declarationMap": true, // Generate sourcemaps for declaration files (optional).
+
+    /* Strict Type-Checking Options */
+    "strict": true, // Enable all strict type-checking options. Highly recommended.
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // How modules get resolved (usually 'node').
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules. Recommended.
+    "resolveJsonModule": true, // Allows importing JSON files.
+
+    /* Advanced Options */
+    "skipLibCheck": true, // Skip type checking of declaration files. Can speed up compilation.
+    "forceConsistentCasingInFileNames": true // Disallow inconsistently-cased references to the same file.
+  },
+  "include": ["src/**/*"], // Which files TypeScript should compile.
+  "exclude": ["node_modules", "dist"] // Which files/directories to exclude.
+}

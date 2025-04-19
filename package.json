@@ -1,0 +1,22 @@
+{
+  "name": "nodestarter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --format=cjs --minify --sourcemap",
+    "build:browser": "npm run typecheck && esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=browser --format=iife --minify --sourcemap",
+    "start": "node dist/bundle.js",
+    "dev": "esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --format=cjs --sourcemap --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "esbuild": "^0.25.2",
+    "typescript": "^5.8.3"
+  }
+}
